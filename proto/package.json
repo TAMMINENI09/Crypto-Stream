@@ -1,0 +1,12 @@
+{
+    "name": "@pluto/proto",
+    "private": true,
+    "scripts": {
+        "generate": "buf generate"
+    },
+    "devDependencies": {
+        "@bufbuild/buf": "^1.40.0",
+        "@bufbuild/protoc-gen-es": "^1.10.0",
+        "@connectrpc/protoc-gen-connect-es": "^1.5.0"
+    }
+}

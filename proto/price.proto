@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package price;
+
+message Ticker {
+  string symbol = 1;
+  double price = 2;
+  int64 timestamp = 3;
+}
+
+message SubscribeRequest {
+  string ticker = 1;
+}
+
+message UnsubscribeRequest {
+  string ticker = 1;
+}
+
+message SubscribeResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message UnsubscribeResponse {
+  bool success = 1;
+  string message = 2;
+}
+
+message PriceUpdate {
+  string ticker = 1;
+  double price = 2;
+  int64 timestamp = 3;
+}
+
+service PriceService {
+  rpc Subscribe(SubscribeRequest) returns (SubscribeResponse);
+  rpc Unsubscribe(UnsubscribeRequest) returns (UnsubscribeResponse);
+  rpc StreamPrices(SubscribeRequest) returns (stream PriceUpdate);
+}

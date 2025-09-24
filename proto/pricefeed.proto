@@ -1,0 +1,27 @@
+syntax = "proto3";
+package pluto.pricefeed.v1;
+
+import "google/protobuf/empty.proto";
+
+message Ticker { string symbol = 1; }
+
+message PriceUpdate {
+  string symbol = 1;
+  double price = 2;
+  int64 ts_ms = 3; // server timestamp ms
+  string source = 4; // "tradingview:BINANCE"
+}
+
+message Health {
+  bool browser = 1;
+  uint32 pages = 2;
+  repeated string tickers = 3;
+  map<string, uint32> subscribers = 4;
+  uint32 mem_mb = 5;
+  uint32 uptime_sec = 6;
+}
+
+service PriceFeedService {
+  rpc StreamPrices(Ticker) returns (stream PriceUpdate);
+  rpc GetHealth(google.protobuf.Empty) returns (Health);
+}

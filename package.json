@@ -1,0 +1,23 @@
+{
+    "name": "Crypto Stream",
+    "version": "1.0.0",
+    "private": true,
+    "scripts": {
+        "install": "pnpm install --recursive --ignore-scripts",
+        "postinstall": "npx buf generate && pnpm --filter backend exec playwright install --with-deps",
+        "dev": "./run.sh",
+        "generate": "npx buf generate",
+        "generate:protos": "npx buf generate"
+    },
+    "devDependencies": {
+        "@bufbuild/buf": "^1.28.1",
+        "@bufbuild/protoc-gen-es": "^1.10.1",
+        "@connectrpc/protoc-gen-connect-es": "^1.7.0",
+        "@types/node": "^20.11.0",
+        "typescript": "^5.3.0"
+    },
+    "dependencies": {
+        "@bufbuild/protobuf": "^1.0.0",
+        "@connectrpc/connect-web": "^1.0.0"
+    }
+}
