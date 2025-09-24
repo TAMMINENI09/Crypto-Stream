@@ -32,3 +32,48 @@ The project demonstrates low-latency data streaming, scalable server design, and
 ### 1. Install dependencies  
 ```bash
 pnpm install --recursive
+
+### 2. Run the application  
+```bash
+./run.sh
+
+### 3. Open in browser
+
+Go to 👉 http://localhost:3000
+
+## 🖼️ Demo
+
+<img width="959" height="430" alt="image" src="https://github.com/user-attachments/assets/1dcf1f07-a649-4b90-a820-4320f28486e8" />
+
+## Example Tickers
+
+Try adding:
+
+BTCUSD
+
+ETHUSD
+
+SOLUSD
+
+ADAUSD
+
+DOTUSD
+
+🛠️ Future Improvements
+
+📊 Historical charts for price movements
+
+💾 Database persistence for watchlists
+
+🔔 Price alerts/notifications
+
+🌐 Multi-exchange support
+
+👨‍💻 Author
+
+Sai Siri Tammineni
+
+🌐 LinkedIn
+
+💻 GitHub
+
